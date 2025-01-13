@@ -1,0 +1,461 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #121212;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  animation: fadeIn 1s ease-in-out;
+  line-height: 1.7;
+}
+
+.bridge-container {
+  background-color: #1d1d1d;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+  width: 420px;
+  max-width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  animation: slideIn 1s ease-in-out;
+}
+
+.bridge-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #f0f0f0;
+  animation: fadeInDown 1s ease-in-out;
+  font-size: 2em;
+}
+
+.convert-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.convert-section {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  animation: fadeInUp 0.6s ease-in-out;
+}
+
+.convert-section label {
+  margin-right: 12px;
+  color: #bbb;
+  font-size: 1.1em;
+}
+
+.convert-section select,
+.convert-section input {
+  padding: 12px;
+  border: 1px solid #444;
+  border-radius: 10px;
+  background-color: #333;
+  color: #eee;
+  flex: 1;
+  margin-right: 8px;
+  box-sizing: border-box;
+  min-width: 0;
+  font-size: 1.1em;
+  transition: all 0.3s ease;
+}
+
+.convert-section input:focus,
+.convert-section select:focus {
+  border-color: #4CAF50;
+  outline: none;
+  background-color: #444;
+}
+
+.convert-arrow {
+  display: flex;
+  justify-content: center;
+  margin: 15px 0;
+  animation: rotateIn 1s ease-in-out;
+}
+
+#convert-direction {
+  background-color: transparent;
+  border: none;
+  font-size: 1.8em;
+  cursor: pointer;
+  color: #bbb;
+  transition: color 0.3s ease;
+}
+
+#convert-direction:hover {
+  color: #fff;
+}
+
+.destination-section {
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+  gap: 18px;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+#add-destination {
+  background: linear-gradient(45deg, #28a745, #218838);
+  border: none;
+  padding: 15px 25px;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1.2em;
+  transition: background 0.3s ease;
+}
+
+#add-destination:hover {
+  background: linear-gradient(45deg, #218838, #28a745);
+}
+
+#destination-address {
+  /* padding: 12px; */
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border: 1px solid #444;
+  border-radius: 10px;
+  background-color: #333;
+  margin-bottom: 12px;
+  width: 100%;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+#submit-destination {
+  background: linear-gradient(45deg, #007bff, #0056b3);
+  border: none;
+  padding: 15px 25px;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  width: auto;
+  animation: pulse 2s infinite;
+}
+
+#connect-wallet,
+#convert-tokens,
+#convert-tokens-2 {
+  padding: 15px 20px;
+  border: none;
+  border-radius: 10px;
+  background-color: #007bff;
+  color: #eee;
+  cursor: pointer;
+  margin-top: 18px;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 1.2em;
+  transition: all 0.3s ease;
+}
+
+#connect-wallet {
+  position: absolute;
+  width: auto;
+  padding: 8px 25px;
+  top: -15px;
+  right: 15px;
+  background-color: #6f42c1;
+  animation: fadeInRight 1s ease-in-out;
+  border-radius: 10px;
+}
+
+#connected-wallet {
+  position: absolute;
+  width: auto;
+  padding: 10px 25px;
+  top: 5px;
+  right: 15px;
+  background-color: #6f42c1;
+  animation: fadeInRight 1s ease-in-out;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#connected-wallet:hover {
+  background-color: #5a2d9c;
+}
+
+#convert-tokens {
+  background: linear-gradient(45deg, #007bff, #0056b3);
+}
+
+#convert-tokens-2 {
+  background: linear-gradient(45deg, #ff5722, #e64a19);
+  margin-top: 18px;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #333;
+  padding: 25px;
+  border-radius: 12px;
+  width: 350px;
+  box-sizing: border-box;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  color: #bbb;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.modal-content h2 {
+  color: #f0f0f0;
+  text-align: center;
+}
+
+.modal-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.modal-content ul li {
+  margin-bottom: 12px;
+}
+
+.modal-content ul li button {
+  width: 100%;
+  padding: 15px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 10px;
+  color: #eee;
+  cursor: pointer;
+}
+
+.wallet-selection {
+  background-color: #121212;
+  color: #fff;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wallet-selection h2 {
+  font-size: 2.2em;
+  margin-bottom: 22px;
+}
+
+.wallet-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.wallet-list li {
+  margin-bottom: 14px;
+}
+
+.wallet-button {
+  display: block;
+  width: 220px;
+  padding: 15px;
+  background-color: #eee;
+  color: #000;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.wallet-button:hover {
+  background-color: #ddd;
+}
+
+@media (max-width: 768px) {
+  .bridge-container {
+      width: 85%;
+  }
+
+  .wallet-button {
+      width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .wallet-button {
+      width: 100%;
+  }
+}
+
+/* #convert-tokens-2 .random-info {
+display: none;
+} */
+
+#convert-tokens-2:hover .random-info {
+display: inline;
+}
+
+#convert-tokens-2 .info-icon {
+margin-right: 10px;
+}
+
+option img {
+vertical-align: middle;
+margin-right: 7px;
+}
+
+#transaction-history-icon {
+  background: linear-gradient(135deg, #6f42c1, #007bff);
+  color: #fff;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: bold;
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+#transaction-history-icon:hover {
+  background: linear-gradient(135deg, #007bff, #6f42c1);
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+#transaction-history-icon:active {
+  transform: scale(1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+#transaction-history-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  /* display: none; */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+#transaction-history-content {
+  background-color: #333;
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 550px;
+  max-height: 80%;
+  box-sizing: border-box;
+  overflow-y: auto;
+  animation: fadeIn 0.5s ease-in-out;
+  color: #eee;
+}
+
+#transaction-history-content h2 {
+  margin-top: 0;
+}
+
+.transaction-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #444;
+  border-radius: 8px;
+}
+
+.transaction-item span {
+  font-weight: bold;
+  color: #aaa;
+}
+
+.transaction-item .amount {
+  font-size: 1.2em;
+  color: #fff;
+}
+
+.transaction-item .date {
+  font-size: 0.9em;
+  color: #aaa;
+}
+
+.close-history-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.5em;
+  color: #bbb;
+  cursor: pointer;
+}
+
+.close-history-modal:hover {
+  color: #fff;
+}   
+/* Modal Styles */
+.modal {
+position: fixed;  /* Make sure the modal is fixed to the screen */
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.5);  /* Dim the background */
+z-index: 9999;  /* Ensure it's on top of other elements */
+/* display: none; */
+}
+
+.modal-content {
+background-color: white;
+margin: 10% auto;
+padding: 20px;
+border-radius: 10px;
+width: 80%;
+max-width: 500px;
+position: relative;
+}
+
+.close {
+cursor: pointer;
+font-size: 2rem;
+position: absolute;
+top: 10px;
+right: 10px;
+}
+
+#wallet-modal, #transaction-history-modal, #fee-breakdown-modal {
+display: block; /* When modal is active, display it */
+}
+
+#wallet-modal {
+z-index: 10000;
+}
+
+#transaction-history-modal {
+z-index: 9999;
+}
+
+#fee-breakdown-modal {
+z-index: 9998;
+}
+
